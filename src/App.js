@@ -8,7 +8,6 @@ import { YearRangeSelector } from './components/YearRangeSelector';
 import originalSource from './items.json';
 
 // TODO Fix map fly on range change
-// TODO Fix zoom problems on range change
 // TODO Remove Modal dependency
 
 const DEBUG = true;

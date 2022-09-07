@@ -12,9 +12,8 @@ export const Map = ({ center, zoom, items, onItemClick }) => {
 
     useEffect(() => {
       const [y, x] = coordinates;
-      // We'll show a modal on the right half of the screen,
-      // therefore we shift the center a bit (also need to reverse it?!)
-      map.flyTo([x, y + 20]);
+      // We need to reverse it, why?!
+      map.panTo([x, y]);
     }, [coordinates])
 
     return null;
@@ -45,6 +44,7 @@ export const Map = ({ center, zoom, items, onItemClick }) => {
       <MapContainer
         center={center}
         zoom={zoom}
+        minZoom={2}
         scrollWheelZoom={true}
       >
         <FlyMapTo />
