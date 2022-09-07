@@ -1,16 +1,21 @@
 import './App.css';
 import './leaflet-config';
-import { useEffect, useMemo, useState } from 'react'
-import { MapContainer, TileLayer } from 'react-leaflet';
-import { generateGeoJSON } from './helpers/generate-geojson'
-import { GeoJsonWithUpdates as GeoJSON } from './components/GeoJsonWithUpdates';
+import { useEffect, useMemo, useState } from 'react';
+import { generateGeoJSON } from './helpers/generate-geojson';
+import { ItemDetails } from './components/ItemDetails'
+import { Map } from './components/Map';
 import { YearRangeSelector } from './components/YearRangeSelector';
 import originalSource from './items.json';
+
+// TODO Fix map fly on range change
+// TODO Fix zoom problems on range change
+// TODO Remove Modal dependency
 
 const DEBUG = true;
 const URL_GEOJSON = 'https://gist.githubusercontent.com/pemre/b8b4e44a5b0a9f6321b5b9d9cb5c939a/raw/c05b39cc3ab015a5dac31b8d0e669b95d1b3f8a6/my-test-map.geojson';
 
 function App() {
+  const [item, setItem] = useState(null);
   const [items, setItems] = useState({ features: [] });
   // Filters
   const [filterByStartYear, setFilterByStartYear] = useState();
@@ -20,11 +25,8 @@ function App() {
     const features = items.features.filter(item =>
       (!filterByStartYear || item.properties.year >= filterByStartYear) &&
       (!filterByEndYear || item.properties.year <= filterByEndYear));
-    console.log('MEMOO')
     return { ...items, features };
   }, [items, filterByStartYear, filterByEndYear]);
-
-  console.log('RENDER', filteredItems, filterByStartYear, filterByEndYear)
 
   useEffect(() => {
     if (DEBUG) {
@@ -40,6 +42,10 @@ function App() {
     }
   }, []);
 
+  const handleMapItemClick = (item) => {
+    setItem(item);
+  }
+
   const handleYearRangeChange = ({ value }) => {
     const [start, end] = value;
     console.debug('handleYearRangeChange()', start, end);
@@ -47,23 +53,27 @@ function App() {
     setFilterByEndYear(end);
   }
 
+  const handleItemDetailsClose = () => {
+    setItem(false);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
 
-        <MapContainer center={[40, 70]} zoom={4} scrollWheelZoom={true}>
-          <TileLayer
-            attribution=''
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            className='map-tiles'
-          />
-          {filteredItems && <GeoJSON data={filteredItems}/>}
-        </MapContainer>
+        <Map
+          center={[50, 45]}
+          zoom={4}
+          items={filteredItems}
+          onItemClick={handleMapItemClick}
+        />
 
         <YearRangeSelector
           dataSource={originalSource.items}
           onValueChanged={handleYearRangeChange}
         />
+
+        {item && <ItemDetails item={item} onClose={handleItemDetailsClose} />}
 
       </header>
     </div>

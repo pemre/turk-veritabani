@@ -1,17 +1,6 @@
 {
   "items": [
     {
-      "name": "Bilge Kağan Yazıtı",
-      "year": 735,
-      "url": "https://tr.wikipedia.org/wiki/Bilge_Ka%C4%9Fan_Yaz%C4%B1t%C4%B1",
-      "state": "Göktürks",
-      "region": "Mongolia",
-      "coordinates": [
-        102.8363767,
-        47.5574135
-      ]
-    },
-    {
       "name": "Kül Tigin Yazıtı",
       "year": 732,
       "url": "https://tr.wikipedia.org/wiki/K%C3%BCl_Tigin_Yaz%C4%B1t%C4%B1",
@@ -21,6 +10,17 @@
       "coordinates": [
         102.8292541,
         47.5640605
+      ]
+    },
+    {
+      "name": "Bilge Kağan Yazıtı",
+      "year": 735,
+      "url": "https://tr.wikipedia.org/wiki/Bilge_Ka%C4%9Fan_Yaz%C4%B1t%C4%B1",
+      "state": "Göktürks",
+      "region": "Mongolia",
+      "coordinates": [
+        102.8363767,
+        47.5574135
       ]
     },
     {
