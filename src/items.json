@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "name": "Bilge Kağan Yazıtı",
+      "year": 735,
+      "url": "https://tr.wikipedia.org/wiki/Bilge_Ka%C4%9Fan_Yaz%C4%B1t%C4%B1",
+      "state": "Göktürks",
+      "region": "Mongolia",
+      "coordinates": [
+        102.8363767,
+        47.5574135
+      ]
+    },
+    {
+      "name": "Kül Tigin Yazıtı",
+      "year": 732,
+      "url": "https://tr.wikipedia.org/wiki/K%C3%BCl_Tigin_Yaz%C4%B1t%C4%B1",
+      "state": "Göktürks",
+      "region": "Mongolia",
+      "notes": "Coordinates are from https://bitig.kz/?lang=e&mod=1&tid=1&oid=15&m=0",
+      "coordinates": [
+        102.8292541,
+        47.5640605
+      ]
+    },
+    {
+      "name": "Tonyukuk Yazıtları",
+      "year": 723,
+      "years": [
+        720,
+        725
+      ],
+      "url": "https://tr.wikipedia.org/wiki/Tonyukuk_Yaz%C4%B1t%C4%B1",
+      "state": "Göktürks",
+      "region": "Mongolia",
+      "notes": "Year is just the average of years, thus it's not very accurate",
+      "coordinates": [
+        107.4753207,
+        47.6945528
+      ]
+    },
+    {
+      "name": "Avar bone plates",
+      "year": 650,
+      "years": [
+        400,
+        900
+      ],
+      "url": "http://www.runiform.lingfil.uu.se/wiki/Avar_bone_plates",
+      "state": "Pannonian Avars",
+      "region": "Hungary",
+      "notes": "Year is just the average of years, thus it's not very accurate",
+      "gps": "46° 17' 54.60\" N, 20° 3' 23.76\" E",
+      "coordinates": [
+        20.0566,
+        46.2985
+      ]
+    }
+  ]
+}
