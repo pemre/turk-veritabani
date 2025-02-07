@@ -1,3 +1,11 @@
+# An interactive map of Turkic languages and inscriptions
+
+Also see the side project: [Turkic languages maps](./maps/README.md)
+
+---
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

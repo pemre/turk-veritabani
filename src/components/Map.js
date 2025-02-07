@@ -1,8 +1,15 @@
 import { useEffect, useState } from 'react'
-import { MapContainer, TileLayer, useMap } from 'react-leaflet'
+import { MapContainer, Polygon, TileLayer, useMap } from 'react-leaflet'
 import * as ReactDOMServer from 'react-dom/server'
 import { Summary } from './Summary'
 import { GeoJsonWithUpdates as GeoJSON } from './GeoJsonWithUpdates'
+import {
+  lowPolyEastTurkistan,
+  lowPolyKazakhstan,
+  lowPolyKhakassia,
+  lowPolyKyrgyzstan,
+  lowPolyUzbekistan
+} from '../low-poly-maps';
 
 export const Map = ({ center, zoom, items, onItemClick }) => {
   const [coordinates, setCoordinates] = useState(center);
@@ -53,6 +60,13 @@ export const Map = ({ center, zoom, items, onItemClick }) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           className='map-tiles'
         />
+
+        <Polygon pathOptions={{ color: '#87CEFA' }} positions={lowPolyEastTurkistan.coordinates} />
+        <Polygon pathOptions={{ color: '#40E0D0', fillColor: 'blue' }} positions={lowPolyKazakhstan.coordinates} />
+        <Polygon pathOptions={{ color: 'lightgreen' }} positions={lowPolyKhakassia.coordinates} />
+        <Polygon pathOptions={{ color: '#FF6347' }} positions={lowPolyKyrgyzstan.coordinates} />
+        <Polygon pathOptions={{ color: 'yellow' }} positions={lowPolyUzbekistan.coordinates} />
+
         {items && <GeoJSON data={items} onEachFeature={onEachFeature} />}
       </MapContainer>
     </div>
