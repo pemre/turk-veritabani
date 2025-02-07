@@ -3,11 +3,20 @@ import {MapContainer, Polygon, TileLayer, Tooltip, useMap} from 'react-leaflet'
 import * as ReactDOMServer from 'react-dom/server'
 import { Summary } from './Summary'
 import { GeoJsonWithUpdates as GeoJSON } from './GeoJsonWithUpdates'
+import { ReactComponent as FlagBashkortostan } from './flags/flag-bashkortostan.svg'
+import { ReactComponent as FlagEastTurkistan } from './flags/flag-east-turkistan.svg'
+import { ReactComponent as FlagKhakassia } from './flags/flag-khakassia.svg'
+import { ReactComponent as FlagTatarstan } from './flags/flag-tatarstan.svg'
 import {
+  lowPolyAzerbaijan,
+  lowPolyBashkortostan,
   lowPolyEastTurkistan,
   lowPolyKazakhstan,
   lowPolyKhakassia,
   lowPolyKyrgyzstan,
+  lowPolyTatarstan,
+  lowPolyTurkiye,
+  lowPolyTurkmenistan,
   lowPolyUzbekistan
 } from '../low-poly-maps';
 
@@ -22,7 +31,8 @@ const word = {
   tat: 'korıltay',
   trm: 'gurultay',
   uyg: 'kurultay, syezd',
-  rus: 'kurultay, kongress'
+  rus: 'kurultay, kongress',
+  hak: 'huralday', // Hakasca
 };
 
 // Test
@@ -89,8 +99,20 @@ export const Map = ({ center, zoom, items, onItemClick }) => {
           className='map-tiles'
         />
 
-        <Polygon pathOptions={{ color: '#87CEFA' }} positions={lowPolyEastTurkistan.coordinates}>
+        <Polygon pathOptions={{ color: '#87CEFA' }} positions={lowPolyAzerbaijan.coordinates}>
           <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+            🇦🇿 {word.aze}
+          </Tooltip>
+        </Polygon>
+        <Polygon pathOptions={{ color: '#01aa0d' }} positions={lowPolyBashkortostan.coordinates}>
+          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+            <FlagBashkortostan style={{ width: '1rem', height: '0.7rem', marginRight: '0.35rem' }} />
+            {word.bas}
+          </Tooltip>
+        </Polygon>
+        <Polygon pathOptions={{ color: '#ff8800' }} positions={lowPolyEastTurkistan.coordinates}>
+          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+            <FlagEastTurkistan style={{ width: '1rem', height: '0.7rem', marginRight: '0.35rem' }} />
             {word.uyg}
           </Tooltip>
         </Polygon>
@@ -100,13 +122,30 @@ export const Map = ({ center, zoom, items, onItemClick }) => {
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: 'lightgreen' }} positions={lowPolyKhakassia.coordinates}>
-          {/*<Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >*/}
-          {/*  {word.uyg}*/}
-          {/*</Tooltip>*/}
+          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+            <FlagKhakassia style={{ width: '1rem', height: '0.7rem', marginRight: '0.35rem' }} />
+            {word.hak}
+          </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: '#FF6347' }} positions={lowPolyKyrgyzstan.coordinates}>
           <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
             🇰🇬 {word.kir}
+          </Tooltip>
+        </Polygon>
+        <Polygon pathOptions={{ color: 'white' }} positions={lowPolyTatarstan.coordinates}>
+          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+            <FlagTatarstan style={{ width: '1rem', height: '0.7rem', marginRight: '0.35rem' }} />
+            {word.tat}
+          </Tooltip>
+        </Polygon>
+        <Polygon pathOptions={{ color: 'red' }} positions={lowPolyTurkiye.coordinates}>
+          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+            🇹🇷 {word.tur}
+          </Tooltip>
+        </Polygon>
+        <Polygon pathOptions={{ color: '#2cf359' }} positions={lowPolyTurkmenistan.coordinates}>
+          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+            🇹🇲 {word.trm}
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: 'yellow' }} positions={lowPolyUzbekistan.coordinates}>
