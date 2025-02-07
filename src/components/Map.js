@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { MapContainer, Polygon, TileLayer, useMap } from 'react-leaflet'
+import {MapContainer, Polygon, TileLayer, Tooltip, useMap} from 'react-leaflet'
 import * as ReactDOMServer from 'react-dom/server'
 import { Summary } from './Summary'
 import { GeoJsonWithUpdates as GeoJSON } from './GeoJsonWithUpdates'
@@ -10,6 +10,34 @@ import {
   lowPolyKyrgyzstan,
   lowPolyUzbekistan
 } from '../low-poly-maps';
+
+// Test
+const word = {
+  tur: 'kurultay',
+  aze: 'gurultay',
+  bas: 'koroltay',
+  kaz: 'kurıltay',
+  kir: 'kurultay',
+  ozb: 'kurultày',
+  tat: 'korıltay',
+  trm: 'gurultay',
+  uyg: 'kurultay, syezd',
+  rus: 'kurultay, kongress'
+};
+
+// Test
+const wordKing = {
+  tur: 'kral',
+  aze: 'kral',
+  bas: 'korol\'',
+  kaz: 'korol\'',
+  kir: 'korol',
+  ozb: 'kıràl',
+  tat: 'korol\'',
+  trm: 'korol',
+  uyg: 'korol\'',
+  rus: 'korol\''
+};
 
 export const Map = ({ center, zoom, items, onItemClick }) => {
   const [coordinates, setCoordinates] = useState(center);
@@ -61,11 +89,31 @@ export const Map = ({ center, zoom, items, onItemClick }) => {
           className='map-tiles'
         />
 
-        <Polygon pathOptions={{ color: '#87CEFA' }} positions={lowPolyEastTurkistan.coordinates} />
-        <Polygon pathOptions={{ color: '#40E0D0', fillColor: 'blue' }} positions={lowPolyKazakhstan.coordinates} />
-        <Polygon pathOptions={{ color: 'lightgreen' }} positions={lowPolyKhakassia.coordinates} />
-        <Polygon pathOptions={{ color: '#FF6347' }} positions={lowPolyKyrgyzstan.coordinates} />
-        <Polygon pathOptions={{ color: 'yellow' }} positions={lowPolyUzbekistan.coordinates} />
+        <Polygon pathOptions={{ color: '#87CEFA' }} positions={lowPolyEastTurkistan.coordinates}>
+          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+            {word.uyg}
+          </Tooltip>
+        </Polygon>
+        <Polygon pathOptions={{ color: '#40E0D0', fillColor: 'blue' }} positions={lowPolyKazakhstan.coordinates}>
+          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+            🇰🇿 {word.kaz}
+          </Tooltip>
+        </Polygon>
+        <Polygon pathOptions={{ color: 'lightgreen' }} positions={lowPolyKhakassia.coordinates}>
+          {/*<Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >*/}
+          {/*  {word.uyg}*/}
+          {/*</Tooltip>*/}
+        </Polygon>
+        <Polygon pathOptions={{ color: '#FF6347' }} positions={lowPolyKyrgyzstan.coordinates}>
+          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+            🇰🇬 {word.kir}
+          </Tooltip>
+        </Polygon>
+        <Polygon pathOptions={{ color: 'yellow' }} positions={lowPolyUzbekistan.coordinates}>
+          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+            🇺🇿 {word.ozb}
+          </Tooltip>
+        </Polygon>
 
         {items && <GeoJSON data={items} onEachFeature={onEachFeature} />}
       </MapContainer>
