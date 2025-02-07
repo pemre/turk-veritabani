@@ -19,17 +19,18 @@ const customStyles = {
 }
 
 export const ItemDetails = (props) => {
+  const onClose = props.onClose;
   const {
     name, year, years, state,
-  } = props.item
+  } = props.item;
 
   const [ref, hasClickedOutside] = useClickOutside()
 
   useEffect(() => {
     if (hasClickedOutside) {
-      props.onClose();
+      onClose();
     }
-  }, [hasClickedOutside])
+  }, [hasClickedOutside, onClose])
 
   // TODO Remove Modal dependency
   return (
@@ -43,7 +44,7 @@ export const ItemDetails = (props) => {
         ref={ref}
       >
         <h2>{name}</h2>
-        <button onClick={props.onClose}>Close</button>
+        <button onClick={onClose}>Close</button>
         <p>
           {years ? <>[{years[0]} - {years[1]}]</> : <>{year}</>}
         </p>
