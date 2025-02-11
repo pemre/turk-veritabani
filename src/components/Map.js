@@ -20,36 +20,7 @@ import {
   lowPolyUzbekistan
 } from '../low-poly-maps';
 
-// Test
-const word = {
-  tur: 'kurultay',
-  aze: 'gurultay',
-  bas: 'koroltay',
-  kaz: 'kurıltay',
-  kir: 'kurultay',
-  ozb: 'kurultày',
-  tat: 'korıltay',
-  trm: 'gurultay',
-  uyg: 'kurultay, syezd',
-  rus: 'kurultay, kongress',
-  hak: 'huralday', // Hakasca
-};
-
-// Test
-const wordKing = {
-  tur: 'kral',
-  aze: 'kral',
-  bas: 'korol\'',
-  kaz: 'korol\'',
-  kir: 'korol',
-  ozb: 'kıràl',
-  tat: 'korol\'',
-  trm: 'korol',
-  uyg: 'korol\'',
-  rus: 'korol\''
-};
-
-export const Map = ({ center, zoom, items, onItemClick }) => {
+export const Map = ({ center, zoom, items, onItemClick, word }) => {
   const [coordinates, setCoordinates] = useState(center);
 
   const FlyMapTo = () => {
@@ -107,13 +78,13 @@ export const Map = ({ center, zoom, items, onItemClick }) => {
         <Polygon pathOptions={{ color: '#01aa0d' }} positions={lowPolyBashkortostan.coordinates}>
           <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
             <FlagBashkortostan style={{ width: '1rem', height: '0.7rem', marginRight: '0.35rem' }} />
-            {word.bas}
+            {word.bak}
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: '#ff8800' }} positions={lowPolyEastTurkistan.coordinates}>
           <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
             <FlagEastTurkistan style={{ width: '1rem', height: '0.7rem', marginRight: '0.35rem' }} />
-            {word.uyg}
+            {word.uig}
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: '#40E0D0', fillColor: 'blue' }} positions={lowPolyKazakhstan.coordinates}>
@@ -145,12 +116,12 @@ export const Map = ({ center, zoom, items, onItemClick }) => {
         </Polygon>
         <Polygon pathOptions={{ color: '#2cf359' }} positions={lowPolyTurkmenistan.coordinates}>
           <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
-            🇹🇲 {word.trm}
+            🇹🇲 {word.tuk}
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: 'yellow' }} positions={lowPolyUzbekistan.coordinates}>
           <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
-            🇺🇿 {word.ozb}
+            🇺🇿 {word.uzb}
           </Tooltip>
         </Polygon>
 

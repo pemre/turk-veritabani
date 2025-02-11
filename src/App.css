@@ -3,14 +3,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /*background-color: #282c34;*/
+  /*min-height: 100vh;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  /*font-size: calc(10px + 2vmin);*/
+  /*color: white;*/
 }
 
 /* Leaflet
@@ -51,4 +51,51 @@
 .EMRE
 {
   font-size: 1rem;
+}
+
+
+body {
+  background-color: #282c34;
+  color: #abb2bf; /* Metin rengini açık gri yapıyoruz */
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem; /* Font boyutu 0.75rem */
+}
+
+table {
+  font-size: 0.7rem; /* Font boyutunu 0.75rem yapıyoruz */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #3c4048; /* Tablo arka planı */
+  border: 1px solid #444c56; /* Tablo kenarlıkları */
+  table-layout: fixed; /* Sütunların genişliğini eşitler ve taşmayı önler */
+}
+
+th, td {
+  border: 1px solid #444c56; /* Hücre kenarlıkları */
+  padding: 10px;
+  text-align: left;
+  color: #abb2bf; /* Metin rengi */
+  word-wrap: break-word; /* Uzun metinlerin taşmasını önler */
+  overflow-wrap: break-word; /* Ek taşma önlemi */
+}
+
+thead tr {
+  background-color: #4b5261; /* Tablo başlıkları için arka plan */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #353a42; /* Zebra şerit efekti */
+}
+
+tbody tr:hover {
+  background-color: #4b5261; /* Hover efekti */
+  cursor: pointer;
+}
+
+th {
+  font-weight: 600;
+  color: #dcdfe4; /* Başlık metni için daha açık renk */
 }

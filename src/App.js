@@ -6,6 +6,7 @@ import { ItemDetails } from './components/ItemDetails'
 import { Map } from './components/Map';
 import { YearRangeSelector } from './components/YearRangeSelector';
 import originalSource from './items.json';
+import TranslationTable from "./components/TranslationTable";
 
 // TODO Fix map fly on range change
 // TODO Remove Modal dependency
@@ -26,6 +27,19 @@ function App() {
       (!filterByEndYear || item.properties.year <= filterByEndYear));
     return { ...items, features };
   }, [items, filterByStartYear, filterByEndYear]);
+
+  const [word, setWord] = useState({
+    "tur": "abajur",
+    "aze": "abajur",
+    "bak": "abajur",
+    "kaz": "abajur",
+    "kir": "abajur",
+    "uzb": "äbäjür",
+    "tat": "abajur",
+    "tuk": "abajur",
+    "uig": "abajur; lampa kalpiği",
+    "rus": "abajur"
+  });
 
   useEffect(() => {
     if (DEBUG) {
@@ -56,6 +70,11 @@ function App() {
     setItem(false);
   }
 
+  const handleTranslationRowClick = (thing) => {
+    setWord(thing);
+    console.log('thing  ', thing);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -65,12 +84,15 @@ function App() {
           zoom={4}
           items={filteredItems}
           onItemClick={handleMapItemClick}
+          word={word}
         />
 
-        <YearRangeSelector
-          dataSource={originalSource.items}
-          onValueChanged={handleYearRangeChange}
-        />
+        <TranslationTable onRowClick={handleTranslationRowClick} />
+
+        {/*<YearRangeSelector*/}
+        {/*  dataSource={originalSource.items}*/}
+        {/*  onValueChanged={handleYearRangeChange}*/}
+        {/*/>*/}
 
         {item && <ItemDetails item={item} onClose={handleItemDetailsClose} />}
 
