@@ -1,5 +1,4 @@
 import RangeSelector, {
-  Behavior,
   Chart,
   CommonSeriesSettings, Format, Label,
   Margin,
@@ -11,10 +10,11 @@ export const YearRangeSelector = (props) => {
   return (
     <RangeSelector
       id="range-selector"
-      title="Select a Year Period"
+      // title="Select a Year Period"
       onValueChanged={props.onValueChanged}
       theme={'generic.dark'}
       dataSource={props.dataSource}
+      className="_range-selector-container"
     >
       <Margin top={25}/>
       <Chart>
@@ -30,8 +30,6 @@ export const YearRangeSelector = (props) => {
           <Format type="decimal"/>
         </Label>
       </Scale>
-      <Behavior
-        animationEnabled={false}/>
     </RangeSelector>
   )
 };

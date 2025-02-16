@@ -2,14 +2,22 @@ import './App.css';
 import './leaflet-config';
 import { useEffect, useMemo, useState } from 'react';
 import { generateGeoJSON } from './helpers/generate-geojson';
-import { ItemDetails } from './components/ItemDetails'
+// import { ItemDetails } from './components/ItemDetails'
 import { Map } from './components/Map';
-import { YearRangeSelector } from './components/YearRangeSelector';
+// import { YearRangeSelector } from './components/YearRangeSelector';
 import originalSource from './items.json';
 import TranslationTable from "./components/TranslationTable";
 
 // TODO Fix map fly on range change
 // TODO Remove Modal dependency
+/* TODO Explain dependencies and their usage in README:
+  "devextreme-react": "22.1.4",
+  "leaflet": "^1.8.0",
+  "react-click-outside-hook": "^1.1.1",
+  "react-leaflet": "^4.0.2",
+  "react-modal": "^3.15.1",
+  "react-window": "^1.8.11",
+*/
 
 const DEBUG = true;
 const URL_GEOJSON = 'https://gist.githubusercontent.com/pemre/b8b4e44a5b0a9f6321b5b9d9cb5c939a/raw/c05b39cc3ab015a5dac31b8d0e669b95d1b3f8a6/my-test-map.geojson';
@@ -76,28 +84,26 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+      <Map
+        center={[55, 45]}
+        zoom={4}
+        items={filteredItems}
+        onItemClick={handleMapItemClick}
+        word={word}
+      />
 
-        <Map
-          center={[50, 45]}
-          zoom={4}
-          items={filteredItems}
-          onItemClick={handleMapItemClick}
-          word={word}
-        />
+      <div className="mt-8"></div>
 
-        <TranslationTable onRowClick={handleTranslationRowClick} />
+      <TranslationTable onRowClick={handleTranslationRowClick} />
 
-        {/*<YearRangeSelector*/}
-        {/*  dataSource={originalSource.items}*/}
-        {/*  onValueChanged={handleYearRangeChange}*/}
-        {/*/>*/}
+      {/*<YearRangeSelector*/}
+      {/*  dataSource={originalSource.items}*/}
+      {/*  onValueChanged={handleYearRangeChange}*/}
+      {/*/>*/}
 
-        {item && <ItemDetails item={item} onClose={handleItemDetailsClose} />}
-
-      </header>
-    </div>
+      {/*{item && <ItemDetails item={item} onClose={handleItemDetailsClose} />}*/}
+    </>
   );
 }
 
