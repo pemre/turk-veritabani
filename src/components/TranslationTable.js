@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback } from "react";
 import { VariableSizeList as List } from "react-window";
-import data from "../tdk-word-list-flat.json";
+import data from "./app/tdk-word-list-flat.json";
 
 // Tüm olası kolon isimleri (JSON’daki anahtarlar)
 const ALL_COLUMNS = ["tur", "aze", "bak", "kaz", "kir", "uzb", "tat", "tuk", "uig", "rus"];

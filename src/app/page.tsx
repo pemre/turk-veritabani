@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import App from "@/App";
+import App from "@/components/app/App";
 import { useState } from "react";
 
 // TODO Find a better solution

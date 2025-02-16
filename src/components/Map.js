@@ -1,13 +1,22 @@
-import { React, useEffect, useState } from 'react'
+"use client"
+// Fixed some Next.js problems:
+// `Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error`
+// https://andresmpa.medium.com/how-to-use-react-leaflet-in-nextjs-with-typescript-surviving-it-21a3379d4d18
+import "leaflet/dist/leaflet.css";
+// According to the article, we'll need more imports for default marker icon:
+// import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
+// import "leaflet-defaulticon-compatibility";
+// npm i @types/leaflet react-leaflet leaflet leaflet-defaulticon-compatibility leaflet-geosearch
+import {
+  // React,
+  useEffect,
+  useState
+} from 'react'
 import {MapContainer, Polygon, TileLayer, Tooltip, useMap} from 'react-leaflet'
-import * as ReactDOMServer from 'react-dom/server'
-import { Summary } from './Summary'
+// import * as ReactDOMServer from 'react-dom/server'
+// import { Summary } from './Summary'
 import { GeoJsonWithUpdates as GeoJSON } from './GeoJsonWithUpdates'
 // TODO Create generic or specific flag component
-// import FlagBashkortostan from './flags/flag-bashkortostan.svg'
-// import FlagEastTurkistan from './flags/flag-east-turkistan.svg'
-// import FlagKhakassia from './flags/flag-khakassia.svg'
-// import FlagTatarstan from './flags/flag-tatarstan.svg'
 import {
   lowPolyAzerbaijan,
   lowPolyBashkortostan,
@@ -19,7 +28,7 @@ import {
   lowPolyTurkiye,
   lowPolyTurkmenistan,
   lowPolyUzbekistan
-} from '../low-poly-maps';
+} from './app/low-poly-maps';
 import Image from "next/image";
 
 // TODO Find a better solution
@@ -48,8 +57,16 @@ const WordFormatter = ({ word }) => {
   );
 };
 
-export const Map = ({ center, zoom, items, onItemClick, word }) => {
-  const [coordinates, setCoordinates] = useState(center);
+const Map = ({
+                      center,
+                      zoom,
+                      items,
+                      // onItemClick,
+                      word
+}) => {
+  const [coordinates,
+    // setCoordinates
+  ] = useState(center);
 
   const FlyMapTo = () => {
     const map = useMap();
@@ -63,6 +80,7 @@ export const Map = ({ center, zoom, items, onItemClick, word }) => {
     return null;
   }
 
+  /*
   const onEachFeature = (feature, layer) => {
     layer.on({
       click: () => {
@@ -82,6 +100,7 @@ export const Map = ({ center, zoom, items, onItemClick, word }) => {
       offset: [-5, 12]
     });
   }
+   */
 
   return (
     <div className="map">
@@ -175,8 +194,13 @@ export const Map = ({ center, zoom, items, onItemClick, word }) => {
           </Tooltip>
         </Polygon>
 
-        {items && <GeoJSON data={items} onEachFeature={onEachFeature} />}
+        {items && <GeoJSON
+          data={items}
+          // onEachFeature={onEachFeature}
+        />}
       </MapContainer>
     </div>
   );
 };
+
+export default Map;
