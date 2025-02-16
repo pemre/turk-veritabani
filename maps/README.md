@@ -2,11 +2,17 @@
 
 This directory contains maps of Turkic languages and countries where they are spoken.
 
+* [🇦🇿 Azerbaijan](./original-polygons/azerbaijan-full.geojson)
+* [Bashkortostan](./original-polygons/bashkortostan-full.geojson) republic in Russia
 * [East Turkistan (Xinjiang)](./original-polygons/east-turkistan-full.geojson) region in China
-* [Kazakhstan](./original-polygons/kazakhstan-full.geojson)
+* [🇰🇿 Kazakhstan](./original-polygons/kazakhstan-full.geojson)
 * [Khakassia](./original-polygons/khakassia-full.geojson) republic in Russia
-* [Kyrgyzstan](./original-polygons/kyrgyzstan-full.geojson)
-* [Uzbekistan](./original-polygons/uzbekistan-full.geojson)
+* [🇰🇬 Kyrgyzstan](./original-polygons/kyrgyzstan-full.geojson)
+* [Tatarstan](./original-polygons/tatarstan-full.geojson) republic in Russia
+* [🇹🇷 Türkiye](./original-polygons/turkiye-full.geojson)
+* [🇹🇲 Turkmenistan](./original-polygons/turkmenistan-full.geojson)
+* [🇺🇿 Uzbekistan](./original-polygons/uzbekistan-full.geojson)
+
 
 # Getting country polygon boundaries in JSON format
 
@@ -33,4 +39,4 @@ To generate and download a simplified polygon, you can use the [Polygons OpenStr
 
 OpenStreetMap (OSM) and many other mapping libraries (such as Leaflet and OpenLayers) expect coordinates in the format (latitude, longitude), but the polygons we exported are written as (longitude, latitude).
 
-We need to swap the values in each pair. You can use ChatGPT to do this automatically.
+We need to swap the values in each pair. You can use a simple ChatGPT prompt to do this automatically.
