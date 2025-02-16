@@ -23,11 +23,11 @@ const DEBUG = true;
 const URL_GEOJSON = 'https://gist.githubusercontent.com/pemre/b8b4e44a5b0a9f6321b5b9d9cb5c939a/raw/c05b39cc3ab015a5dac31b8d0e669b95d1b3f8a6/my-test-map.geojson';
 
 function App() {
-  const [item, setItem] = useState(null);
+  // const [item, setItem] = useState(null);
   const [items, setItems] = useState({ features: [] });
   // Filters
-  const [filterByStartYear, setFilterByStartYear] = useState();
-  const [filterByEndYear, setFilterByEndYear] = useState();
+  // const [filterByStartYear, setFilterByStartYear] = useState();
+  // const [filterByEndYear, setFilterByEndYear] = useState();
 
   const filteredItems = useMemo(() => {
     const features = items.features.filter(item =>
@@ -67,16 +67,16 @@ function App() {
     setItem(item);
   }
 
-  const handleYearRangeChange = ({ value }) => {
-    const [start, end] = value;
-    console.debug('handleYearRangeChange()', start, end);
-    setFilterByStartYear(start);
-    setFilterByEndYear(end);
-  }
+  // const handleYearRangeChange = ({ value }) => {
+  //   const [start, end] = value;
+  //   console.debug('handleYearRangeChange()', start, end);
+  //   setFilterByStartYear(start);
+  //   setFilterByEndYear(end);
+  // }
 
-  const handleItemDetailsClose = () => {
-    setItem(false);
-  }
+  // const handleItemDetailsClose = () => {
+  //   setItem(false);
+  // }
 
   const handleTranslationRowClick = (thing) => {
     setWord(thing);

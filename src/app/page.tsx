@@ -60,7 +60,7 @@ export default function Home() {
 const AboutModalLink = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const openModal = (e) => {
+    const openModal = (e: { preventDefault: () => void }) => {
         e.preventDefault();
         setIsOpen(true);
     };

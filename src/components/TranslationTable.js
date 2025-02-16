@@ -247,7 +247,7 @@ const LanguageDropdown = ({ ALL_COLUMNS, languageMap, visibleCols, toggleColumn 
             aria-labelledby="dropdownSearchButton"
           >
             {filteredColumns.map((col) => {
-              const { abbr, full, flag } = languageMap[col];
+              const { full, flag } = languageMap[col];
               return (
                 <li key={col}>
                   <div className="flex items-center p-2 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-600">
