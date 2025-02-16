@@ -52,10 +52,7 @@ function App() {
   //   return { ...items, features };
   // }, [items, filterByStartYear, filterByEndYear]);
 
-  const [
-    word,
-    ,setWord
-  ] = useState({
+  const [word, setWord] = useState({
     "tur": "abajur",
     "aze": "abajur",
     "bak": "abajur",
