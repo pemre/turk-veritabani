@@ -4,6 +4,9 @@ import Image from "next/image";
 import App from "@/App";
 import { useState } from "react";
 
+// TODO Find a better solution
+const basePath = "/turk-veritabani";
+
 export default function Home() {
   return (
     <div className="min-h-screen p-8 font-[family-name:var(--font-geist-sans)] bg-[#0d1117] text-[#f0f6fc]">
@@ -16,12 +19,12 @@ export default function Home() {
             >
                 <Image
                     aria-hidden
-                    src="/globe.svg"
+                    src={basePath + "/globe.svg"}
                     alt="Globe icon"
                     width={16}
                     height={16}
                 />
-                Türk Veritabanı uygulaması - v0.2.0
+                Türk Veritabanı uygulaması - v{process.env.NEXT_PUBLIC_APP_VERSION}
             </a>
             <div className="ml-8">
                 <AboutModalLink />
@@ -40,7 +43,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="/globe.svg"
+            src={basePath + "/globe.svg"}
             alt="Globe icon"
             width={16}
             height={16}
@@ -76,7 +79,7 @@ const AboutModalLink = () => {
             >
                 <Image
                     aria-hidden
-                    src="/file.svg"
+                    src={basePath + "/file.svg"}
                     alt="Hakkında"
                     width={16}
                     height={16}

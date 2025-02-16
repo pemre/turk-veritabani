@@ -22,6 +22,9 @@ import {
 } from '../low-poly-maps';
 import Image from "next/image";
 
+// TODO Find a better solution
+const basePath = "/turk-veritabani";
+
 const FlagFormatter = ({flagEmoji}) => {
   return (
     <div className="absolute top-[-0.9rem] text-[1.2rem]">{flagEmoji}</div>
@@ -103,7 +106,7 @@ export const Map = ({ center, zoom, items, onItemClick, word }) => {
         </Polygon>
         <Polygon pathOptions={{ color: '#01aa0d' }} positions={lowPolyBashkortostan.coordinates}>
           <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
-            <Image aria-hidden src="/flags/flag-bashkortostan.svg" alt="Flag of Bashkortostan"
+            <Image aria-hidden src={basePath + "/flags/flag-bashkortostan.svg"} alt="Flag of Bashkortostan"
               width={20}
               height={20}
               className="absolute top-[-0.5rem]"
@@ -113,7 +116,7 @@ export const Map = ({ center, zoom, items, onItemClick, word }) => {
         </Polygon>
         <Polygon pathOptions={{ color: '#ff8800' }} positions={lowPolyEastTurkistan.coordinates}>
           <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
-            <Image aria-hidden src="/flags/flag-east-turkistan.svg" alt="Flag of East Turkistan"
+            <Image aria-hidden src={basePath + "/flags/flag-east-turkistan.svg"} alt="Flag of East Turkistan"
                    width={20}
                    height={20}
                    className="absolute top-[-0.5rem]"
@@ -129,7 +132,7 @@ export const Map = ({ center, zoom, items, onItemClick, word }) => {
         </Polygon>
         <Polygon pathOptions={{ color: 'lightgreen' }} positions={lowPolyKhakassia.coordinates}>
           <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
-            <Image aria-hidden src="/flags/flag-khakassia.svg" alt="Flag of Khakassia"
+            <Image aria-hidden src={basePath + "/flags/flag-khakassia.svg"} alt="Flag of Khakassia"
                    width={20}
                    height={20}
                    className="absolute top-[-0.5rem]"
@@ -145,7 +148,7 @@ export const Map = ({ center, zoom, items, onItemClick, word }) => {
         </Polygon>
         <Polygon pathOptions={{ color: 'white' }} positions={lowPolyTatarstan.coordinates}>
           <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
-            <Image aria-hidden src="/flags/flag-tatarstan.svg" alt="Flag of Tatarstan"
+            <Image aria-hidden src={basePath + "/flags/flag-tatarstan.svg"} alt="Flag of Tatarstan"
                    width={20}
                    height={20}
                    className="absolute top-[-0.5rem]"
