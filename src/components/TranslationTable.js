@@ -123,7 +123,7 @@ const VirtualizedWordTable = ({ onRowClick }) => {
 
 
       {/* Table header */}
-      <div className="flex pr-[24px]">
+      <div className="flex pr-[24px] mb-2">
         {visibleColumns.map((col) => {
           const { abbr, full, flag } = languageMap[col];
 

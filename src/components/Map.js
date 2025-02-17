@@ -8,7 +8,7 @@ import "leaflet/dist/leaflet.css";
 // import "leaflet-defaulticon-compatibility";
 // npm i @types/leaflet react-leaflet leaflet leaflet-defaulticon-compatibility leaflet-geosearch
 import {
-  // React,
+  memo,
   useEffect,
   useState
 } from 'react'
@@ -62,7 +62,8 @@ const Map = ({
                       zoom,
                       items,
                       // onItemClick,
-                      word
+                      word,
+               height,
 }) => {
   const [coordinates,
     // setCoordinates
@@ -109,6 +110,8 @@ const Map = ({
         zoom={zoom}
         minZoom={2}
         scrollWheelZoom={true}
+        style={{ height: `${height}px` }}
+        className="rounded-t"
       >
         <FlyMapTo />
         <TileLayer
@@ -118,13 +121,13 @@ const Map = ({
         />
 
         <Polygon pathOptions={{ color: '#87CEFA' }} positions={lowPolyAzerbaijan.coordinates}>
-          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+          <Tooltip direction="top" offset={[0, 0]} opacity={1} permanent >
             <FlagFormatter flagEmoji="🇦🇿" />
             <WordFormatter word={word.aze} />
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: '#01aa0d' }} positions={lowPolyBashkortostan.coordinates}>
-          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+          <Tooltip direction="top" offset={[0, 0]} opacity={1} permanent >
             <Image aria-hidden src={basePath + "/flags/flag-bashkortostan.svg"} alt="Flag of Bashkortostan"
               width={20}
               height={20}
@@ -134,7 +137,7 @@ const Map = ({
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: '#ff8800' }} positions={lowPolyEastTurkistan.coordinates}>
-          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+          <Tooltip direction="top" offset={[0, 0]} opacity={1} permanent >
             <Image aria-hidden src={basePath + "/flags/flag-east-turkistan.svg"} alt="Flag of East Turkistan"
                    width={20}
                    height={20}
@@ -144,13 +147,13 @@ const Map = ({
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: '#40E0D0', fillColor: 'blue' }} positions={lowPolyKazakhstan.coordinates}>
-          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+          <Tooltip direction="top" offset={[0, 0]} opacity={1} permanent >
             <FlagFormatter flagEmoji="🇰🇿" />
             <WordFormatter word={word.kaz} />
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: 'lightgreen' }} positions={lowPolyKhakassia.coordinates}>
-          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+          <Tooltip direction="top" offset={[0, 0]} opacity={1} permanent >
             <Image aria-hidden src={basePath + "/flags/flag-khakassia.svg"} alt="Flag of Khakassia"
                    width={20}
                    height={20}
@@ -160,13 +163,13 @@ const Map = ({
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: '#FF6347' }} positions={lowPolyKyrgyzstan.coordinates}>
-          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+          <Tooltip direction="top" offset={[0, 0]} opacity={1} permanent >
             <FlagFormatter flagEmoji="🇰🇬" />
             <WordFormatter word={word.kir} />
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: 'white' }} positions={lowPolyTatarstan.coordinates}>
-          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+          <Tooltip direction="top" offset={[0, 0]} opacity={1} permanent >
             <Image aria-hidden src={basePath + "/flags/flag-tatarstan.svg"} alt="Flag of Tatarstan"
                    width={20}
                    height={20}
@@ -182,13 +185,13 @@ const Map = ({
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: '#2cf359' }} positions={lowPolyTurkmenistan.coordinates}>
-          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+          <Tooltip direction="top" offset={[0, 0]} opacity={1} permanent >
             <FlagFormatter flagEmoji="🇹🇲" />
             <WordFormatter word={word.tuk} />
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: 'yellow' }} positions={lowPolyUzbekistan.coordinates}>
-          <Tooltip className="EMRE" direction="top" offset={[0, 0]} opacity={1} permanent >
+          <Tooltip direction="top" offset={[0, 0]} opacity={1} permanent >
             <FlagFormatter flagEmoji="🇺🇿" />
             <WordFormatter word={word.uzb} />
           </Tooltip>
