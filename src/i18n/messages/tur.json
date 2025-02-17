@@ -1,0 +1,22 @@
+{
+  "navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkında"
+  },
+  "languages": {
+    "aze": "Azerbaycan Türkçesi",
+    "bak": "Başkurt Türkçesi",
+    "eng": "İngilizce",
+    "kaz": "Kazak Türkçesi",
+    "kir": "Kırgız Türkçesi",
+    "rus": "Rusça",
+    "tat": "Tatar Türkçesi",
+    "tuk": "Türkmen Türkçesi",
+    "tur": "Türkiye Türkçesi",
+    "uig": "Uygur Türkçesi",
+    "uzb": "Özbek Türkçesi"
+  },
+  "ClientPage": {
+    "title": "Hakkında"
+  }
+} 

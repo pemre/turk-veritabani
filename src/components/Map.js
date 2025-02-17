@@ -27,7 +27,7 @@ import {
   lowPolyTurkiye,
   lowPolyTurkmenistan,
   lowPolyUzbekistan
-} from './app/low-poly-maps';
+} from '@/data/low-poly-maps';
 import Image from "next/image";
 
 // TODO Find a better solution
@@ -75,7 +75,12 @@ const Map = ({
       const [y, x] = coordinates;
       // We need to reverse it, why?!
       map.panTo([x, y]);
-    }, [coordinates])
+      // Removed coordinates dependency due to warning:
+      // Warning: React Hook useEffect has an unnecessary dependency: 'coordinates'.
+      // Either exclude it or remove the dependency array.
+      // Outer scope values like 'coordinates' aren't valid dependencies because
+      // mutating them doesn't re-render the component.  react-hooks/exhaustive-deps
+    }, [map])
 
     return null;
   }
@@ -162,6 +167,7 @@ const Map = ({
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: '#FF6347' }} positions={lowPolyKyrgyzstan.coordinates}>
+          {/* For animation: className="transition-all"*/}
           <Tooltip direction="top" offset={[0, 0]} opacity={1} permanent >
             <FlagFormatter flagEmoji="🇰🇬" />
             <WordFormatter word={word.kir} />
@@ -178,7 +184,7 @@ const Map = ({
           </Tooltip>
         </Polygon>
         <Polygon pathOptions={{ color: 'red' }} positions={lowPolyTurkiye.coordinates} className="group">
-          <Tooltip className="" direction="top" offset={[0, 0]} opacity={1} permanent >
+          <Tooltip direction="top" offset={[0, 0]} opacity={1} permanent >
             <FlagFormatter flagEmoji="🇹🇷" />
             <WordFormatter word={word.tur} />
           </Tooltip>

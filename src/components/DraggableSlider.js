@@ -15,7 +15,7 @@ function DraggableSlider({
                            initialHeight = 400,
                            minHeight = 200,
                            maxHeight = 800,
-                           persistKey = null,
+                           persistKey,
                          }) {
   const containerRef = useRef(null);
 

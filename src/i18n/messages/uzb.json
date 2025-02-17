@@ -1,0 +1,22 @@
+{
+  "navigation": {
+    "home": "Bosh sahifa",
+    "about": "Haqida"
+  },
+  "languages": {
+    "aze": "Ozarbayjon turkchasi",
+    "bak": "Boshqird turkchasi",
+    "eng": "Ingliz tili",
+    "kaz": "Qozoq turkchasi",
+    "kir": "Qirgʻiz turkchasi",
+    "rus": "Rus tili",
+    "tat": "Tatar turkchasi",
+    "tuk": "Turkman turkchasi",
+    "tur": "Turkiya turkchasi",
+    "uig": "Uygʻur turkchasi",
+    "uzb": "Oʻzbek turkchasi"
+  },
+  "ClientPage": {
+    "title": "Haqida"
+  }
+}

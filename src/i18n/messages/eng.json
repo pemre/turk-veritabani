@@ -1,0 +1,22 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About"
+  },
+  "languages": {
+    "aze": "Azerbaijani Turkish",
+    "bak": "Bashkir Turkish",
+    "eng": "English",
+    "kaz": "Kazakh Turkish",
+    "kir": "Kyrgyz Turkish",
+    "rus": "Russian",
+    "tat": "Tatar Turkish",
+    "tuk": "Turkmen Turkish",
+    "tur": "Turkish (Turkey)",
+    "uig": "Uyghur Turkish",
+    "uzb": "Uzbek Turkish"
+  },
+  "ClientPage": {
+    "title": "About"
+  }
+}

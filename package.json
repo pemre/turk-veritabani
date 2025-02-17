@@ -1,6 +1,6 @@
 {
   "name": "Türk Veritabanı uygulaması",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "homepage": "https://pemre.github.io/turk-veritabani",
   "scripts": {
@@ -19,7 +19,8 @@
     "react-dom": "^19.0.0",
     "react-leaflet": "^5.0.0",
     "react-modal": "^3.16.3",
-    "react-window": "^1.8.11"
+    "react-window": "^1.8.11",
+    "next-intl": "^3.5.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

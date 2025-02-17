@@ -1,0 +1,22 @@
+{
+  "navigation": {
+    "home": "Baş sahypa",
+    "about": "Barada"
+  },
+  "languages": {
+    "aze": "Azerbaýjan türkçe",
+    "bak": "Başgyrt türkçe",
+    "eng": "Iňlis dili",
+    "kaz": "Gazak türkçe",
+    "kir": "Gyrgyz türkçe",
+    "rus": "Rus dili",
+    "tat": "Tatar türkçe",
+    "tuk": "Türkmen türkçe",
+    "tur": "Türkiýe türkçe",
+    "uig": "Uýgur türkçe",
+    "uzb": "Özbek türkçe"
+  },
+  "ClientPage": {
+    "title": "Barada"
+  }
+}
