@@ -8,7 +8,6 @@ import "leaflet/dist/leaflet.css";
 // import "leaflet-defaulticon-compatibility";
 // npm i @types/leaflet react-leaflet leaflet leaflet-defaulticon-compatibility leaflet-geosearch
 import {
-  memo,
   useEffect,
   useState
 } from 'react'
